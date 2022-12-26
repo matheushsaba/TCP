@@ -1,0 +1,54 @@
+package posicoes;
+
+import java.util.ArrayList;
+import teste.PosicaoMapa4x4;
+import teste.ValidacaoInput;
+
+public class AplicacaoTestaPosicoes
+{
+    //CONSTANTS
+    private final int MAP_WIDTH = 4;
+    private final int MAP_HEIGHT = 4;
+
+    //MAIN
+    public static void main(String[] args) 
+    {
+        //Criaçao de p1
+        PosicaoMapa4x4 p1 = new PosicaoMapa4x4();
+        p1.imprime();
+        ValidacaoInput.solicitarCoordenada(p1, ValidacaoInput.Eixo.x);
+        ValidacaoInput.solicitarCoordenada(p1, ValidacaoInput.Eixo.y);
+        
+
+        //Criaçao de p2
+        PosicaoMapa4x4 p2 = new PosicaoMapa4x4();
+        p2.imprime();
+        ValidacaoInput.solicitarCoordenada(p2, ValidacaoInput.Eixo.x);
+        ValidacaoInput.solicitarCoordenada(p2, ValidacaoInput.Eixo.y);
+        p1.distancia(p2);
+
+
+        //Criaçao de p3
+        PosicaoMapa4x4 p3 = p1.copy();
+
+
+        //Verificaçao se p1, p2 e p3 estao sobrepostos
+        PosicaoMapa4x4.estaoNaMesmaPosicao(p1, p2);
+        PosicaoMapa4x4.estaoNaMesmaPosicao(p2, p3);
+        PosicaoMapa4x4.estaoNaMesmaPosicao(p1, p3);
+
+
+        //Criaçao da lista e impressao do mapa
+        ArrayList<PosicaoMapa4x4> arrayDePontos = new ArrayList<>();
+        arrayDePontos.add(p1);
+        arrayDePontos.add(p2);
+        arrayDePontos.add(p3);
+        imprimeMapa(arrayDePontos);
+    }
+
+    public static void imprimeMapa(ArrayList<PosicaoMapa4x4> pontos)
+    {
+        
+    }
+
+}

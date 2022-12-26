@@ -1,21 +1,23 @@
-public class Posicao4x4()
+package teste;
+
+public class PosicaoMapa4x4
 {
     //PROPERTIES
-    private int x { get; set; }
-    private int y { get; set; }
-    private static int numPosicoesOcupadas { get; private set; }
+    private int x;
+    private int y;
+    private static int numPosicoesOcupadas;
 
+    
     //CONSTRUCTORS
     public PosicaoMapa4x4()
     {
         this.reset();
-
-        
     }
 
     public PosicaoMapa4x4(int x, int y)
     {
-
+        this.x = x;
+        this.y = y;
     }
 
 
@@ -27,7 +29,8 @@ public class Posicao4x4()
             this.x = newX;
             return true;
         }
-            
+        
+        this.reset();
         return false;
     }
 
@@ -38,22 +41,25 @@ public class Posicao4x4()
             this.y = newY;
             return true;
         }
-            
+        
+        this.reset();
         return false;
     }
-
+    
     public int getX()
     {
-
+        return this.x;
     }
-
+    
     public int getY()
     {
-        
+        return this.y;
     }
-
     
-
+    public static int getNumPosicoesOcupadas()
+    {
+        return numPosicoesOcupadas;
+    }
 
     public PosicaoMapa4x4 copy()
     {
@@ -62,17 +68,21 @@ public class Posicao4x4()
 
     public void imprime()
     {
-
+        System.out.println(String.format("(%i, %i)", this.x, this.y));
     }
 
     public int distancia(PosicaoMapa4x4 posicao)
     {
+        int diferencaAbsolutaX = Math.abs(this.x - posicao.x);
+        int diferencaAbsolutaY = Math.abs(this.y - posicao.y);
 
+        return diferencaAbsolutaX + diferencaAbsolutaY;
     }
 
     private void reset()
     {
-
+        this.setX(0);
+        this.setY(0);
     }
 
     public static boolean estaoNaMesmaPosicao(PosicaoMapa4x4 primeiraPosicao, PosicaoMapa4x4 segundaPosicao)
