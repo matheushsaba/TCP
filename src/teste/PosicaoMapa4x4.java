@@ -8,7 +8,9 @@ public class Posicao4x4()
     //CONSTRUCTORS
     public PosicaoMapa4x4()
     {
+        this.reset();
 
+        
     }
 
     public PosicaoMapa4x4(int x, int y)
@@ -18,14 +20,26 @@ public class Posicao4x4()
 
 
     //METHODS
-    public boolean setX()
+    public boolean setX(int newX)
     {
-
+        if(newX >= 0 && newX < 4)
+        {
+            this.x = newX;
+            return true;
+        }
+            
+        return false;
     }
 
-    public boolean setY()
+    public boolean setY(int newY)
     {
-        
+        if(newY >= 0 && newY < 4)
+        {
+            this.y = newY;
+            return true;
+        }
+            
+        return false;
     }
 
     public int getX()
