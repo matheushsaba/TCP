@@ -17,16 +17,16 @@ public class AplicacaoTestaPosicoes
     {
         //Criaçao de p1
         PosicaoMapa4x4 p1 = new PosicaoMapa4x4();
-        p1.imprime();
         ValidacaoInput.solicitarCoordenada(p1, ValidacaoInput.Eixo.x);
         ValidacaoInput.solicitarCoordenada(p1, ValidacaoInput.Eixo.y);
+        p1.imprime();
         
 
         //Criaçao de p2
         PosicaoMapa4x4 p2 = new PosicaoMapa4x4();
-        p2.imprime();
         ValidacaoInput.solicitarCoordenada(p2, ValidacaoInput.Eixo.x);
         ValidacaoInput.solicitarCoordenada(p2, ValidacaoInput.Eixo.y);
+        p2.imprime();
         p1.distancia(p2);
 
 
