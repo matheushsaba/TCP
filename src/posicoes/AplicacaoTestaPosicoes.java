@@ -1,14 +1,16 @@
 package posicoes;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+
 import teste.PosicaoMapa4x4;
 import teste.ValidacaoInput;
 
 public class AplicacaoTestaPosicoes
 {
     //CONSTANTS
-    private final int MAP_WIDTH = 4;
-    private final int MAP_HEIGHT = 4;
+    static final int MAP_WIDTH = 4;
+    static final int MAP_HEIGHT = 4;
 
     //MAIN
     public static void main(String[] args) 
@@ -48,7 +50,32 @@ public class AplicacaoTestaPosicoes
 
     public static void imprimeMapa(ArrayList<PosicaoMapa4x4> pontos)
     {
-        
+        HashSet<String> coordenadasDosDrones = new HashSet<>();
+
+        for (PosicaoMapa4x4 ponto : pontos) 
+        {
+            String coordenada = ponto.getX() + "," + ponto.getY();
+            coordenadasDosDrones.add(coordenada);
+        }
+
+
+        for (int i = 0; i < MAP_HEIGHT; i++)
+        {
+            for (int j = 0; j < MAP_WIDTH; j++)
+            {
+                String coordenada = i + "," + j;
+
+                if (coordenadasDosDrones.contains(coordenada))
+                {
+                    System.out.print("X");
+                }
+                else
+                {
+                    System.out.print("O");
+                }
+            }
+            System.out.println();
+        }
     }
 
 }
