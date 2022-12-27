@@ -1,10 +1,10 @@
-package posicoes;
+package teste;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 
-import teste.PosicaoMapa4x4;
-import teste.ValidacaoInput;
+import posicoes.PosicaoMapa4x4;
+import posicoes.ValidacaoInput;
 
 public class AplicacaoTestaPosicoes
 {

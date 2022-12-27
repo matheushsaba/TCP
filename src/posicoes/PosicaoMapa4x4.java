@@ -1,4 +1,4 @@
-package teste;
+package posicoes;
 
 public class PosicaoMapa4x4
 {

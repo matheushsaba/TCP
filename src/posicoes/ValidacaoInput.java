@@ -1,4 +1,4 @@
-package teste;
+package posicoes;
 
 import java.util.Scanner;
 
