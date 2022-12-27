@@ -35,9 +35,9 @@ public class AplicacaoTestaPosicoes
 
 
         //Verificaçao se p1, p2 e p3 estao sobrepostos
-        PosicaoMapa4x4.estaoNaMesmaPosicao(p1, p2);
-        PosicaoMapa4x4.estaoNaMesmaPosicao(p2, p3);
-        PosicaoMapa4x4.estaoNaMesmaPosicao(p1, p3);
+        boolean sobreposicaoP1P2 = PosicaoMapa4x4.estaoNaMesmaPosicao(p1, p2);
+        boolean sobreposicaoP2P3 = PosicaoMapa4x4.estaoNaMesmaPosicao(p2, p3);
+        boolean sobreposicaoP1P3 = PosicaoMapa4x4.estaoNaMesmaPosicao(p1, p3);
 
 
         //Criaçao da lista e impressao do mapa
@@ -58,7 +58,6 @@ public class AplicacaoTestaPosicoes
             coordenadasDosDrones.add(coordenada);
         }
 
-
         for (int i = 0; i < MAP_HEIGHT; i++)
         {
             for (int j = 0; j < MAP_WIDTH; j++)
@@ -67,11 +66,11 @@ public class AplicacaoTestaPosicoes
 
                 if (coordenadasDosDrones.contains(coordenada))
                 {
-                    System.out.print("X");
+                    System.out.print("X ");
                 }
                 else
                 {
-                    System.out.print("O");
+                    System.out.print("- ");
                 }
             }
             System.out.println();

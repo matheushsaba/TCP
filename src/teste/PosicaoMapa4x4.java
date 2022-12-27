@@ -68,7 +68,7 @@ public class PosicaoMapa4x4
 
     public void imprime()
     {
-        System.out.println(String.format("(%i, %i)", this.x, this.y));
+        System.out.println(String.format("(%d, %d)", this.x, this.y));
     }
 
     public int distancia(PosicaoMapa4x4 posicao)
